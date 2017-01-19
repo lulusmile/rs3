@@ -1,0 +1,34 @@
+<head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {packages: ['line']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      // Define the chart to be drawn.
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Element');
+      data.addColumn('number', 'Percentage');
+      data.addRows([
+        ['Jan', 0.78],
+        ['Feb', 0.21],
+        ['Mar', 0.01]
+        ]);
+
+      // Set chart options
+      var options = 
+      {'title':'Runescape Item Name',
+      'width':400,
+      'height':300};
+  // https://developers.google.com/chart/interactive/docs/gallery/linechart
+
+      // Instantiate and draw the chart.
+      var chart = new google.charts.Line(document.getElementById('myLineChart'));
+      chart.draw(data, options);
+    }
+  </script>
+</head>
+<body>
+  <!-- Identify where the chart should be drawn. -->
+  <div id="myLineChart"/>
+</body>
