@@ -17,14 +17,19 @@
 
       // Set chart options
       var options = 
-      {'title':'Runescape Item Name',
-      'width':400,
-      'height':300};
+      {'title': 'Runescape Item Name',
+      'width': 400,
+      'height': 250,
+      'backgroundColor': '#EFD670',
+      chartArea: {
+        backgroundColor: '#EFD670'
+      }
+      };
   // https://developers.google.com/chart/interactive/docs/gallery/linechart
 
       // Instantiate and draw the chart.
       var chart = new google.charts.Line(document.getElementById('myLineChart'));
-      chart.draw(data, options);
+      chart.draw(data, google.charts.Line.convertOptions(options));
     }
   </script>
 </head>
